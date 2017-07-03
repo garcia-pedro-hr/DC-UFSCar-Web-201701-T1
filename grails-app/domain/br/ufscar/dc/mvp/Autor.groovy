@@ -2,15 +2,15 @@ package br.ufscar.dc.mvp
 
 class Autor {
     
-    //static hasMany = [livros: Livro]
+    static hasMany = [livros: Livro]
     
     static constraints = {
-        name(blank: false, size: 1..40)
+        nome(blank: false, size: 1..40)
     }
     
-    String name
+    String nome
     
     String toString(){
-        return name
+        return nome
     }
 }

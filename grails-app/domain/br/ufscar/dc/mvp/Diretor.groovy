@@ -2,16 +2,16 @@ package br.ufscar.dc.mvp
 
 class Diretor {
 
-    //static hasMany = [filmes: DVD]
+    static hasMany = [filmes: DVD]
     
     static constraints = {
-        name(blank: false, size: 1..40)
+        nome(blank: false, size: 1..40)
     }
     
-    String name
+    String nome
     
     String toString(){
-        return name
+        return nome
     }
     
 }
