@@ -14,6 +14,6 @@ class Venda {
         for(i in this.produtos){
             precoTotal += i.preco
         }
-        return "Venda: " + this.produtos.length() + "produtos, total: R\$" + precoTotal + ". Vendedor - " + funcionario.nome
+        return "Venda: total: R\$" + precoTotal + ". Vendedor - " + funcionario.toString
     }
 }

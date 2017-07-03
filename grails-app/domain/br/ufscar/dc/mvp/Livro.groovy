@@ -17,7 +17,7 @@ class Livro extends Produto{
     String classificacao
     
     String toString(){
-        return nome + " - " + autor.nome
+        return nome + " - " + autor.toString()
     }
 }
 

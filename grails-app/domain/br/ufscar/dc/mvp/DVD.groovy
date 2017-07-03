@@ -14,7 +14,7 @@ class DVD extends Produto {
     Diretor diretor
     
     String toString(){
-        return nome + " - " + diretor.nome
+        return nome + " - " + diretor.toString()
     }
 
 }

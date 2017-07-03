@@ -13,6 +13,6 @@ static constraints = {
     Artista artista
     
     String toString(){
-        return nome + " - " + artista.nome
+        return nome + " - " + artista.toString()
     }
 }

@@ -23,9 +23,21 @@ class BootStrap {
                     enabled: true
             )
             admin.save flush: true
-
+            
+            def slsmn = new User(
+                username: "slsmn",
+                password: "root",
+                email: "slsmn@mvp.br",
+                firstName: "Vendedor",
+                lastName: "MVP",
+                enabled: true
+            )
+            slsmn.save flush: true
+            
             UserRole.create admin, Role.findByAuthority("ROLE_ADMIN"), true
             UserRole.create admin, Role.findByAuthority("ROLE_SLSMN"), true
+            
+            UserRole.create slsmn, Role.findByAuthority("ROLE_SLSMN"), true
 
             log.debug "Users: DONE"
         }
