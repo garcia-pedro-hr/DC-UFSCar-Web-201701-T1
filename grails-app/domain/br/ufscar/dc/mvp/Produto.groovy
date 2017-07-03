@@ -16,6 +16,5 @@ class Produto {
     int quantidade
     float preco
     
-
-
+    
 }

@@ -26,6 +26,10 @@
 					
 						<th><g:message code="venda.funcionario.label" default="Funcionario" /></th>
 					
+						<th><g:message code="venda.produto.label" default="Produto" /></th>
+					
+						<g:sortableColumn property="quantidade" title="${message(code: 'venda.quantidade.label', default: 'Quantidade')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -33,6 +37,10 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${vendaInstance.id}">${fieldValue(bean: vendaInstance, field: "funcionario")}</g:link></td>
+					
+						<td>${fieldValue(bean: vendaInstance, field: "produto")}</td>
+					
+						<td>${fieldValue(bean: vendaInstance, field: "quantidade")}</td>
 					
 					</tr>
 				</g:each>

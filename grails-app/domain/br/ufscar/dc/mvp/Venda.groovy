@@ -1,19 +1,20 @@
 package br.ufscar.dc.mvp
 
 class Venda {
-    static hasMany = [produtos: Produto]
+    //static hasMany = [produtos: Produto]
     
     static constraints = {
         funcionario(nullable: false)
+        produto(nullable: false)
+        quantidade(blank: false, min: 1)
     }
     
     User funcionario
+    Produto produto
+    int quantidade
     
     String toString(){
-        float precoTotal = 0
-        for(i in this.produtos){
-            precoTotal += i.preco
-        }
-        return "Venda: total: R\$" + precoTotal + ". Vendedor - " + funcionario.toString
+        //float precoTotal = produto.getPreco() * quantidade
+        return "Venda: " + quantidade + " " + ", total: R\$" +  ". Vendedor - " + funcionario.toString()
     }
 }

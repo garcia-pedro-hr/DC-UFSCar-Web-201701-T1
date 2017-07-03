@@ -32,13 +32,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${vendaInstance?.produtos}">
+				<g:if test="${vendaInstance?.produto}">
 				<li class="fieldcontain">
-					<span id="produtos-label" class="property-label"><g:message code="venda.produtos.label" default="Produtos" /></span>
+					<span id="produto-label" class="property-label"><g:message code="venda.produto.label" default="Produto" /></span>
 					
-						<g:each in="${vendaInstance.produtos}" var="p">
-						<span class="property-value" aria-labelledby="produtos-label"><g:link controller="produto" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="property-value" aria-labelledby="produto-label"><g:link controller="produto" action="show" id="${vendaInstance?.produto?.id}">${vendaInstance?.produto?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${vendaInstance?.quantidade}">
+				<li class="fieldcontain">
+					<span id="quantidade-label" class="property-label"><g:message code="venda.quantidade.label" default="Quantidade" /></span>
+					
+						<span class="property-value" aria-labelledby="quantidade-label"><g:fieldValue bean="${vendaInstance}" field="quantidade"/></span>
 					
 				</li>
 				</g:if>

@@ -11,12 +11,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'produtos', 'error')} ">
-	<label for="produtos">
-		<g:message code="venda.produtos.label" default="Produtos" />
-		
+<div class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'produto', 'error')} required">
+	<label for="produto">
+		<g:message code="venda.produto.label" default="Produto" />
+		<span class="required-indicator">*</span>
 	</label>
-	<g:select name="produtos" from="${br.ufscar.dc.mvp.Produto.list()}" multiple="multiple" optionKey="id" size="5" value="${vendaInstance?.produtos*.id}" class="many-to-many"/>
+	<g:select id="produto" name="produto.id" from="${br.ufscar.dc.mvp.Produto.list()}" optionKey="id" required="" value="${vendaInstance?.produto?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'quantidade', 'error')} required">
+	<label for="quantidade">
+		<g:message code="venda.quantidade.label" default="Quantidade" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="quantidade" type="number" min="1" value="${vendaInstance.quantidade}" required=""/>
 
 </div>
 
