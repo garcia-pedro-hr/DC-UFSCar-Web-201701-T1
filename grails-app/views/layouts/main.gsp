@@ -14,14 +14,15 @@
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<g:external dir="css" file="materialize.min.css" />
 
+		<g:javascript src="util/jquery-3.2.1.min.js" />
+		<g:javascript src="util/jquery.maskedinput.min.js" />
+		<g:javascript src="util/materialize.min.js" />
+
 		<g:layoutHead/>
 	</head>
 	<body>
 
 		<g:layoutBody/>
 
-		<g:javascript src="util/jquery-3.2.1.min.js" />
-		<g:javascript src="util/jquery.maskedinput.min.js" />
-		<g:javascript src="util/materialize.min.js" />
 	</body>
 </html>
