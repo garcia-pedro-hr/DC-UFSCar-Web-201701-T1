@@ -43,7 +43,6 @@
 		<g:message code="CD.artista.label" default="Artista" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="artista" name="artista.id" from="${br.ufscar.dc.mvp.Artista.list()}" optionKey="id" required="" value="${CDInstance?.artista?.id}" class="many-to-one"/>
-
+	<g:select id="artista" name="artista.id" from="${br.ufscar.dc.mvp.Artista.list()}" optionKey="id" required="" value="${CDInstance?.artista?.id}" class="many-to-one" />
 </div>
 

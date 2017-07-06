@@ -1,4 +1,4 @@
 $(document).ready(function() {
-   $('#funcionario-select').material_select();
-   $('#produto-select').material_select();
+   $('#funcionario').material_select();
+   $('#produto').material_select();
 });

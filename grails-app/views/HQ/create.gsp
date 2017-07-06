@@ -34,5 +34,6 @@
 				</fieldset>
 			</g:form>
 		</div>
+		<g:javascript src="cadastraHQ.js" />
 	</body>
 </html>

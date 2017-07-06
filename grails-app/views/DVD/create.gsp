@@ -34,5 +34,6 @@
 				</fieldset>
 			</g:form>
 		</div>
+		<g:javascript src="cadastraDVD.js" />
 	</body>
 </html>

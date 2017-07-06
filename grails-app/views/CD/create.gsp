@@ -34,5 +34,7 @@
 				</fieldset>
 			</g:form>
 		</div>
+
+		<g:javascript src="cadastraCD.js" />
 	</body>
 </html>
