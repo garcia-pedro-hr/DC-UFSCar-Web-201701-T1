@@ -36,6 +36,17 @@ class VendaController {
             respond vendaInstance.errors, view:'create'
             return
         }
+        
+        if(Produto.findById(vendaInstance.produto.id).quantidade <= 0){
+            render "O produto não está disponivel no momento :-("
+            return
+        } else if (vendaInstance.quantidade > Produto.findById(vendaInstance.produto.id).quantidade){
+            render "Tentativa de venda incorreta! Tentativa: " + vendaInstance.quantidade + ", mas temos apenas " + Produto.findById(vendaInstance.produto.id).quantidade + " unidades de " + Produto.findById(vendaInstance.produto.id).nome
+            return
+        }
+        else{
+            Produto.findById(vendaInstance.produto.id).quantidade -= vendaInstance.quantidade
+        }
 
         vendaInstance.save flush:true
 
