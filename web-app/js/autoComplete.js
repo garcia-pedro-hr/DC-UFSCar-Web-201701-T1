@@ -44,9 +44,14 @@ $(document).ready(
                         url: getProduto,
                         data: {nomeProduto : nome},
                         success: function (resp) {
-                            console.log(resp);
+                            console.log(resp)
+                            var dic = [resp];
+                             $(function () {
+                                $('#table').bootstrapTable({
+                                  data: dic
+                                });
                             
-                        },
+                        });},
                         error: function(XMLHttpRequest, textStatus, errorThrown) {
                             console.log(errorThrown);
                             console.log(getProduto);                  

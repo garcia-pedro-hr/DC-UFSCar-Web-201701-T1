@@ -159,6 +159,8 @@ class ProdutoController {
     {
         def nome = params.nomeProduto
         def produto = Produto.findByNome(nome)
-        render produto
+        def prod = [:]
+        def prod2 = ["nome":produto.nome, "quantidade":produto.quantidade, "preco":produto.preco, "tipo":  produto.getClass().getSimpleName()]
+        render prod2 as JSON
     }
 }

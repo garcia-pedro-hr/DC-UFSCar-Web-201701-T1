@@ -3,7 +3,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="main"> 
+                <!-- Latest compiled and minified CSS -->
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+
+                <!-- Latest compiled and minified JavaScript -->
+                <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+
+                <!-- Latest compiled and minified Locales -->
+                <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
 		<g:set var="entityName" value="${message(code: 'produto.label', default: 'Produto')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
@@ -32,35 +40,17 @@
                            </div>
                          </div>
                        </div>
-			<table>
-			<thead>
-				<tr>
-					
-						<g:sortableColumn property="nome" title="${message(code: 'produto.nome.label', default: 'Nome')}" />
-					
-						<g:sortableColumn property="preco" title="${message(code: 'produto.preco.label', default: 'Preco')}" />
-					
-						<g:sortableColumn property="quantidade" title="${message(code: 'produto.quantidade.label', default: 'Quantidade')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${produtoInstanceList}" status="i" var="produtoInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${produtoInstance.id}">${fieldValue(bean: produtoInstance, field: "nome")}</g:link></td>
-					
-						<td>${fieldValue(bean: produtoInstance, field: "preco")}</td>
-					
-						<td>${fieldValue(bean: produtoInstance, field: "quantidade")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${produtoInstanceCount ?: 0}" />
-			</div>
+                       <table class="table table-hover striped" id="table">
+                        <thead>
+                            <tr>
+                                 <th data-field="nome">Nome</th>
+                                 <th data-field="quantidade">Quantidade</th>
+                                 <th data-field="preco">Preço</th>
+                                 <th data-field="tipo">Tipo</th>
+                            </tr>
+                        </thead>
+                        </table>
+			
                         
 		</div>
                  <script>
