@@ -18,6 +18,7 @@ class ProdutoController {
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Produto.list(params), model:[produtoInstanceCount: Produto.count()]
+     //render(view:"buscaDisponibilidade")
     }
 
     def show(Produto produtoInstance) {
@@ -138,5 +139,21 @@ class ProdutoController {
                
         render "ok"
       
+    }
+    
+    def listaProduto()
+    {
+        def path = grailsApplication.mainContext.servletContext.getRealPath('files/produtos.json')
+        def file = new File(path)
+        def produtoList = []
+        
+        if (file.exists()) {
+             System.out.println("FILE EXISTS, CALLING JSON SLURPER")
+            def slurper = new JsonSlurper()
+            produtoList = slurper.parseText(file.getText("UTF-8"))
+        }
+        
+        
+        render produtoList as JSON
     }
 }
