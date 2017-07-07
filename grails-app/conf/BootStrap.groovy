@@ -11,6 +11,8 @@ import br.ufscar.dc.mvp.HQ
 import br.ufscar.dc.mvp.Livro
 import br.ufscar.dc.mvp.Role
 import br.ufscar.dc.mvp.UserRole
+import groovy.json.JsonSlurper
+import groovy.json.*
 
 class BootStrap {
 
@@ -61,9 +63,13 @@ class BootStrap {
 
         
         def cd1 = new CD(nome: "Revolver", preco: 29.99, quantidade: 5, ano: 1965, artista: artista1)
+        adicionaProduto(cd1.nome)
         def cd2 = new CD(nome: "The Dark Side of the Moon", preco: 33.55, quantidade: 12, ano: 1974, artista: artista2)
+        adicionaProduto(cd2.nome)
         def cd3 = new CD(nome: "Mamonas Assassinas", preco: 10, quantidade: 1, ano: 1996, artista: artista3)
+        adicionaProduto(cd3.nome)
         def cd4 = new CD(nome: "The White Album", preco: 50.95, quantidade: 3, ano: 1968, artista: artista1)
+        adicionaProduto(cd4.nome)
         cd1.save flush: true
         cd2.save flush: true
         cd3.save flush: true
@@ -75,7 +81,9 @@ class BootStrap {
         diretor2.save flush: true
         
         def dvd1 = new DVD(nome: "Interestelar", preco: 25.99, quantidade: 20, ano: 2014, diretor: diretor2)
+        adicionaProduto(dvd1.nome)
         def dvd2 = new DVD(nome: "Jurassic Park", preco: 5.95, quantidade: 3, ano: 1993, diretor: diretor1)
+        adicionaProduto(dvd2.nome)
         dvd1.save flush: true
         dvd2.save flush: true
         
@@ -98,14 +106,19 @@ class BootStrap {
         
         def livro1 = new Livro(nome: "Boneco de Neve", preco: 49.99, quantidade: 30, autor: autor2, 
             editora: ed1, classificacao: "Suspense")
+        adicionaProduto(livro1.nome)
         def livro2 = new Livro(nome: "Quebra de Confiança", preco: 32.95, quantidade: 4, autor: autor1,
             editora: ed2, classificacao: "Policial")
+        adicionaProduto(livro2.nome)
         livro1.save flush: true
         livro2.save flush: true
         
         def hq1 = new HQ(nome: "Tio Patinhas", preco: 3.27, quantidade: 40, editora: ed1)
+        adicionaProduto(hq1.nome)
         def hq2 = new HQ(nome: "Naruto", preco: 5.90, quantidade: 22, editora: ed2)
+        adicionaProduto(hq2.nome)
         def hq3 = new HQ(nome: "Popeye", preco: 1.00, quantidade: 56, editora: ed1)
+        adicionaProduto(hq3.nome)
         hq1.save flsuh: true
         hq2.save flush: true
         hq3.save flush: true
@@ -115,5 +128,33 @@ class BootStrap {
     }
 
     def destroy = {
+    }
+    
+    def adicionaProduto(String nome) {       
+        def path = 'web-app/files/produtos.json'
+        def file = new File(path)
+        def produtoList = []
+        
+        if (!file.exists()) {
+            System.out.println("CREATING JSON FILE ENDED WITH SUCCESS : " + new File(path).createNewFile())
+            file = new File(path)
+            produtoList = []
+        } else {
+            System.out.println("FILE EXISTS, CALLING JSON SLURPER")
+            def slurper = new JsonSlurper()
+            produtoList = slurper.parseText(file.getText("UTF-8"))
+        }
+        
+      
+        produtoList.add(nome)
+        def produtoListJson = JsonOutput.toJson(produtoList)
+      
+       
+        file.withWriter("UTF-8"){
+            it.writeLine produtoListJson
+        }
+                   
+        
+      
     }
 }

@@ -112,7 +112,7 @@ class ProdutoController {
         return Produto.findById(params.id).quantidade
     }
     
-    def adicionaProduto() {        
+    def adicionaProduto() {       
         def path = grailsApplication.mainContext.servletContext.getRealPath('files/produtos.json')
         def file = new File(path)
         def produtoList = []
