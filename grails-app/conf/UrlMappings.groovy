@@ -6,8 +6,12 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+   
 
         "/"(view:"/index")
         "500"(view:'/error')
+        
+        // API mappings
+        "/produto/add"(controller: "produto", action: "adicionaProduto")
 	}
 }

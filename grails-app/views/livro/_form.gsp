@@ -7,7 +7,7 @@
 		<g:message code="livro.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nome" maxlength="30" required="" value="${livroInstance?.nome}"/>
+	<g:textField id="nome" name="nome" maxlength="30" required="" value="${livroInstance?.nome}"/>
 
 </div>
 

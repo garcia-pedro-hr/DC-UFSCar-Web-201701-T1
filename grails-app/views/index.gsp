@@ -17,6 +17,6 @@
 					</g:each>
 				</ul>
 			</div>
-		</div>
+              
 	</body>
 </html>

@@ -1,10 +1,12 @@
 package br.ufscar.dc.mvp
 
-
+import grails.util.Holders
+import org.codehaus.groovy.grails.web.json.JSONObject
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.springframework.security.access.annotation.Secured
+import groovy.json.JsonBuilder
 
 @Transactional(readOnly = true)
 @Secured('ROLE_ADMIN')
@@ -21,12 +23,13 @@ class ArtistaController {
         respond artistaInstance
     }
 
-    def create() {
+    def create() {       
         respond new Artista(params)
     }
 
     @Transactional
     def save(Artista artistaInstance) {
+            
         if (artistaInstance == null) {
             notFound()
             return
@@ -38,7 +41,7 @@ class ArtistaController {
         }
 
         artistaInstance.save flush:true
-
+        
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'artista.label', default: 'Artista'), artistaInstance.id])

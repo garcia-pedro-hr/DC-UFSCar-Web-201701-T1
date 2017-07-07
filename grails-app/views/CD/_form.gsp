@@ -7,8 +7,7 @@
 		<g:message code="CD.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nome" maxlength="30" required="" value="${CDInstance?.nome}"/>
-
+	<g:textField id="nome" name="nome" maxlength="30" required="" value="${CDInstance?.nome}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: CDInstance, field: 'preco', 'error')} required">

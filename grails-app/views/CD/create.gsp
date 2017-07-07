@@ -30,11 +30,18 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                                    <button name="create" class="save createProduto">
+                                        ${message(code: 'default.button.create.label', default: 'Create')} 
+                                    </button>
+
 				</fieldset>
 			</g:form>
 		</div>
 
 		<g:javascript src="cadastraCD.js" />
+                <g:javascript src="autoComplete.js" />
+                <script>
+                    var produtoLink = "${createLink(controller:'produto', action:'adicionaProduto')}"
+                </script>
 	</body>
 </html>

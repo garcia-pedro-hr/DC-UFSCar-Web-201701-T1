@@ -11,6 +11,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
 // The ACCEPT header will not be used for content negotiation for user agents containing the following strings (defaults to the 4 major rendering engines)
@@ -35,7 +36,8 @@ grails.mime.types = [ // the first one is the default format
 //grails.urlmapping.cache.maxsize = 1000
 
 // Legacy setting for codec used to encode data with ${}
-grails.views.default.codec = "html"
+grails.views.default.codec = "none"
+
 
 // The default scope for controllers. May be prototype, session or singleton.
 // If unspecified, controllers are prototype scoped.
@@ -58,8 +60,6 @@ grails {
         // filteringCodecForContentType.'text/html' = 'html'
     }
 }
-
-
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
@@ -130,6 +130,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':        ['permitAll'],
 	'/**/css/**':       ['permitAll'],
 	'/**/images/**':    ['permitAll'],
-	'/**/favicon.ico':  ['permitAll']
+	'/**/favicon.ico':  ['permitAll'],    
+     
 ]
 

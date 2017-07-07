@@ -7,7 +7,7 @@
 		<g:message code="DVD.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nome" maxlength="30" required="" value="${DVDInstance?.nome}"/>
+	<g:textField id="nome" name="nome" maxlength="30" required="" value="${DVDInstance?.nome}"/>
 
 </div>
 

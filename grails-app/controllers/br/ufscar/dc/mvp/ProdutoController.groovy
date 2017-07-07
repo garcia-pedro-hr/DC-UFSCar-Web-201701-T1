@@ -4,8 +4,13 @@ package br.ufscar.dc.mvp
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import groovy.json.*
+import java.io.File
+import grails.converters.JSON
+import org.springframework.security.access.annotation.Secured
 
 @Transactional(readOnly = true)
+@Secured('ROLE_ADMIN')
 class ProdutoController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -104,5 +109,34 @@ class ProdutoController {
 
     def getQuantidade () {
         return Produto.findById(params.id).quantidade
+    }
+    
+    def adicionaProduto() {        
+        def path = grailsApplication.mainContext.servletContext.getRealPath('files/produtos.json')
+        def file = new File(path)
+        def produtoList = []
+        
+        if (!file.exists()) {
+            System.out.println("CREATING JSON FILE ENDED WITH SUCCESS : " + new File(path).createNewFile())
+            file = new File(path)
+            produtoList = []
+        } else {
+            System.out.println("FILE EXISTS, CALLING JSON SLURPER")
+            def slurper = new JsonSlurper()
+            produtoList = slurper.parseText(file.getText("UTF-8"))
+        }
+        
+        System.out.println(produtoList)
+        produtoList.add(params.nomeProduto)
+        def produtoListJson = JsonOutput.toJson(produtoList)
+        System.out.println(produtoListJson)
+        //file.write(produtoListJson)
+        file.withWriter("UTF-8"){
+            it.writeLine produtoListJson
+        }
+        System.out.println(file.getText("UTF-8"))
+               
+        render "ok"
+      
     }
 }
