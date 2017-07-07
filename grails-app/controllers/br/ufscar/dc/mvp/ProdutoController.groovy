@@ -151,9 +151,14 @@ class ProdutoController {
              System.out.println("FILE EXISTS, CALLING JSON SLURPER")
             def slurper = new JsonSlurper()
             produtoList = slurper.parseText(file.getText("UTF-8"))
-        }
-        
-        
+        }    
         render produtoList as JSON
+    }
+    
+    def getProduto()
+    {
+        def nome = params.nomeProduto
+        def produto = Produto.findByNome(nome)
+        render produto
     }
 }

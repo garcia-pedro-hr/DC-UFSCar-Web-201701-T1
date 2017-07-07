@@ -64,8 +64,10 @@
                         
 		</div>
                  <script>
-                    var listaLink = "${createLink(controller:'produto', action:'listaProduto')}"
+                    var listaLink = "${createLink(controller:'produto', action:'listaProduto')}";
+                    var getProduto = "${createLink(controller:'produto', action:'getProduto')}";
                 </script>
-                <g:javascript src="autoComplete.js" />
+              
+                <g:javascript src="autoComplete.js" />  
 	</body>
 </html>
