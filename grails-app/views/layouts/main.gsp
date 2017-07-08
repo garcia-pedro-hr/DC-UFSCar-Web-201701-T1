@@ -21,8 +21,25 @@
 		<g:layoutHead/>
 	</head>
 	<body>
+            <div id="header">    
+                <nav>
+                    <div class="nav-wrapper">
+                      <a href="#" class="brand-logo">Lojinha do Salim <3</a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><g:link controller="login">Login</g:link></li>
+                        <li><g:link controller="logout">Logout</g:link></li>
+                      </ul>
+                    </div>
+                </nav>
+            </div>
+            
+		
+            <div id="content">
+                <g:layoutBody/>
+                <img class="materialboxed" width="650" src="http://curitibacult.com.br/wp-content/uploads/2016/01/sebo.jpg">
+            </div>
 
-		<g:layoutBody/>
-
+            <div id="footer">
+            </div>
 	</body>
 </html>
