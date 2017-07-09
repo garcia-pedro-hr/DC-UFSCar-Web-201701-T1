@@ -5,8 +5,17 @@
  */
 $(document).ready(   
     function () { 
+     
    
-    var produto = $('.createProduto').click(function () {        
+    $(function () {
+            var dic1 = {"nome" : "","quantidade" : "","preco" : "","tipo" : ""};
+            $('#table').bootstrapTable('load', {
+              undefinedText: 'n/a',
+              data: [dic1]
+            });
+
+    });
+    $('.createProduto').click(function () {        
         var nome = $('#nome').val();   
         console.log()
         $.ajax ({
@@ -27,27 +36,36 @@ $(document).ready(
             url: listaLink,
             data: {},
             success: function (resp) {
+               
                 json = resp;
                 var new_json = {}
                 for(var i=0; i<json.length; i++)
                 {
                     new_json[json[i]] = null;
                 }
-                var s = $('input.autocomplete').autocomplete({        
+                $('input.autocomplete').autocomplete({        
                 data: new_json,          
                 limit: 20, 
                 onAutocomplete: function(val) {
                   // Callback function when value is autcompleted.     
+                  $(function () {
+                    console.log("hi")
+                    var dic = [];
+                    $('#table').bootstrapTable({
+                      data: dic
+                    });
+                });
                   var nome = val;
-                   
+           //       console.log(val)                   
                    $.ajax ({
                         url: getProduto,
                         data: {nomeProduto : nome},
                         success: function (resp) {
-                            console.log(resp)
-                            var dic = [resp];
+                             var dic = [resp];
+                             console.log(dic)                            
                              $(function () {
-                                $('#table').bootstrapTable({
+                                $('#table').bootstrapTable('load', {
+                                  undefinedText: 'n/a',
                                   data: dic
                                 });
                             

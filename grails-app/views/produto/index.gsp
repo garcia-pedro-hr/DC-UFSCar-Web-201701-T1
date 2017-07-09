@@ -6,6 +6,7 @@
 		<meta name="layout" content="main"> 
                 <!-- Latest compiled and minified CSS -->
                 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+                <link rel="stylesheet" href="${resource(dir: 'css', file: 'table.css')}" type="text/css">
 
                 <!-- Latest compiled and minified JavaScript -->
                 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
@@ -40,7 +41,7 @@
                            </div>
                          </div>
                        </div>
-                       <table class="table table-hover striped" id="table">
+                       <table class="table table-hover striped" data-toggle="table" id="table">
                         <thead>
                             <tr>
                                  <th data-field="nome">Nome</th>
@@ -50,8 +51,6 @@
                             </tr>
                         </thead>
                         </table>
-			
-                        
 		</div>
                  <script>
                     var listaLink = "${createLink(controller:'produto', action:'listaProduto')}";
