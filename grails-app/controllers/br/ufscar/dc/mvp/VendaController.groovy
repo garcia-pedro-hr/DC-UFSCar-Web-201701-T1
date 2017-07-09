@@ -44,7 +44,7 @@ class VendaController {
             render "Tentativa de venda incorreta! Tentativa: " + vendaInstance.quantidade + ", mas temos apenas " + Produto.findById(vendaInstance.produto.id).quantidade + " unidades de " + Produto.findById(vendaInstance.produto.id).nome
             return
         }
-        else{
+        else {
             Produto.findById(vendaInstance.produto.id).quantidade -= vendaInstance.quantidade
         }
 
@@ -114,4 +114,27 @@ class VendaController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    @Transactional
+    def saveOne() {
+        def vendaInstance = new Venda()
+        vendaInstance.funcionario = User.findById(params.user)
+        vendaInstance.produto = Produto.findById(params.produto)
+        vendaInstance.quantidade = params.quantidade as int
+
+        if (vendaInstance.produto.quantidade <= 0){
+            render "INDISPONIVEL"
+            return
+        } else if (vendaInstance.quantidade > vendaInstance.produto.quantidade){
+            render "INVALIDO"
+            return
+        } else {
+            vendaInstance.produto.quantidade -= vendaInstance.quantidade
+        }
+
+        vendaInstance.save flush:true
+
+        render "OK"
+    }
+
 }

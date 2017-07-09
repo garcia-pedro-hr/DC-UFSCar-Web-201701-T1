@@ -13,6 +13,7 @@
 
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<g:external dir="css" file="materialize.min.css" />
+        <g:external dir="css" file="style.css"/>
 
 		<g:javascript src="util/jquery-3.2.1.min.js" />
 		<g:javascript src="util/jquery.maskedinput.min.js" />
@@ -21,25 +22,25 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-            <div id="header">    
-                <nav>
-                    <div class="nav-wrapper">
-                      <a href="#" class="brand-logo">Lojinha do Salim <3</a>
-                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <div id="main-header">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Lojinha do Salim <3</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><g:link controller="login">Login</g:link></li>
                         <li><g:link controller="logout">Logout</g:link></li>
-                      </ul>
-                    </div>
-                </nav>
-            </div>
-            
-		
-            <div id="content">
-                <g:layoutBody/>
-                <img class="materialboxed" width="650" src="http://curitibacult.com.br/wp-content/uploads/2016/01/sebo.jpg">
-            </div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-            <div id="footer">
-            </div>
+
+        <div id="main-content">
+            <g:layoutBody/>
+            <!-- <img class="materialboxed" width="650" src="http://curitibacult.com.br/wp-content/uploads/2016/01/sebo.jpg"> -->
+        </div>
+
+        <div id="main-footer">
+        </div>
 	</body>
 </html>

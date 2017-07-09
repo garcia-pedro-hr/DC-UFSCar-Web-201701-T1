@@ -34,6 +34,7 @@
 				</fieldset>
 			</g:form>
 		</div>
-		<g:javascript src="cadastraEditora.js" />
+
+		<g:javascript src="init.js" />
 	</body>
 </html>

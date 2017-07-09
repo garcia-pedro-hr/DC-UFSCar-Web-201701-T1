@@ -4,8 +4,6 @@
 .DS_Store
 DC-UFSCar-Web-201701-T1.iml
 
-.slcache/
-target/
-.slcache\
-target\
+target/**
+.slcache/**
 .slcache/.index

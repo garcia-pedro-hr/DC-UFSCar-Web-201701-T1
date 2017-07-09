@@ -30,16 +30,34 @@
 			</ul>
 			</g:hasErrors>
 
-			<g:form url="[resource:vendaInstance, action:'save']" >
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
-			</g:form>
+			<div id="venda-form-0" class="row">
+				<div class="col s12">
+					<g:form url="[resource:vendaInstance, action:'save']">
+						<fieldset class="form">
+							<g:render template="form"/>
+						</fieldset>
+					</g:form>
+				</div>
+			</div>
+
+			<div id="button-row" class="row">
+				<!-- Add form button -->
+				<div class="col s6 center-align">
+					<a id="add-venda" class="btn-floating btn-large waves-effect waves-light red">
+						<i class="material-icons">add</i>
+					</a>
+				</div>
+
+				<!-- Send all forms button -->
+				<div class="col s6 center-align">
+					<a id="submit-all" class="btn-floating btn-large waves-effect waves-light red">
+						<i class="material-icons">send</i>
+					</a>
+				</div>
+			</div>
 		</div>
 
-		<g:javascript src="cadastraVenda.js" />
+		<g:javascript src="init.js" />
+		<g:javascript src="venda-manager.js" />
 	</body>
 </html>

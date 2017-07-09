@@ -2,7 +2,7 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'funcionario', 'error')} required">
+<div id="funcionario-field" class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'funcionario', 'error')} required">
 	<label for="funcionario">
 		<g:message code="venda.funcionario.label" default="Funcionario" />
 		<span class="required-indicator">*</span>
@@ -11,7 +11,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'produto', 'error')} required">
+<div id="produto-field" class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'produto', 'error')} required">
 	<label for="produto">
 		<g:message code="venda.produto.label" default="Produto" />
 		<span class="required-indicator">*</span>

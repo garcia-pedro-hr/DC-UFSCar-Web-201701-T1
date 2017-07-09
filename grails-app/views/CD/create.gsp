@@ -38,10 +38,10 @@
 			</g:form>
 		</div>
 
-		<g:javascript src="cadastraCD.js" />
-                <g:javascript src="autoComplete.js" />
-                <script>
-                    var produtoLink = "${createLink(controller:'produto', action:'adicionaProduto')}"
-                </script>
+		<g:javascript src="init.js" />
+		<g:javascript src="autoComplete.js" />
+		<script>
+			var produtoLink = "${createLink(controller:'produto', action:'adicionaProduto')}"
+		</script>
 	</body>
 </html>

@@ -109,7 +109,7 @@ class ProdutoController {
     }
 
     def getQuantidade () {
-        return Produto.findById(params.id).quantidade
+        render Produto.findById(params.id).quantidade
     }
     
     def adicionaProduto() {       
