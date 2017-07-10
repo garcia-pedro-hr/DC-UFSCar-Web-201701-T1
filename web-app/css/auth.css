@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
+.background-image {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: block;
+    background-image: url("../images/background.jpg");
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -ms-filter: blur(6px);
+    -o-filter: blur(6px);
+    filter: blur(6px);
+
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.05);
+}
+
+.background-tint {
+    background-color: rgba(33,148,210,.5);
+    background-blend-mode: multiply;
+}
+
+.card {
+    width: 30em;
+    z-index: 999;
+    font-weight: 600;
+
+    -webkit-box-shadow: 0 16px 24px 2px rgba(0,0,0,0.5), 0 6px 30px 5px rgba(0,0,0,0.44), 0 8px 10px -5px rgba(0,0,0,1);
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.5), 0 6px 30px 5px rgba(0,0,0,0.44), 0 8px 10px -5px rgba(0,0,0,1);
+}
+
+.card-header p {
+    font-family: Lobster;
+    font-size: 50px;
+    color: #2194d2;
+    margin: 0px;
+    text-shadow: 2px 2px #000;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}

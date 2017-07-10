@@ -7,7 +7,7 @@ import grails.transaction.Transactional
 import org.springframework.security.access.annotation.Secured
 
 @Transactional(readOnly = true)
-@Secured('ROLE_SLSMN')
+@Secured(["hasAnyRole('ROLE_ADMIN', 'ROLE_SLSMN')"])
 class VendaController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]

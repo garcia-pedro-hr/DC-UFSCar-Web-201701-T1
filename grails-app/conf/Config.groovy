@@ -123,14 +123,14 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'br.ufscar.dc.m
 grails.plugin.springsecurity.authority.className = 'br.ufscar.dc.mvp.Role'
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                ['permitAll'],
-	'/index':           ['permitAll'],
-	'/index.gsp':       ['permitAll'],
-	'/assets/**':       ['permitAll'],
-	'/**/js/**':        ['permitAll'],
-	'/**/css/**':       ['permitAll'],
-	'/**/images/**':    ['permitAll'],
-	'/**/favicon.ico':  ['permitAll'],    
+	'/':                ['IS_AUTHENTICATED_REMEMBERED'],
+	'/index':           ['IS_AUTHENTICATED_REMEMBERED'],
+	'/index.gsp':       ['IS_AUTHENTICATED_REMEMBERED'],
+	'/assets/**':       ['IS_AUTHENTICATED_REMEMBERED'],
+	'/**/js/**':        ['IS_AUTHENTICATED_REMEMBERED'],
+	'/**/css/**':       ['IS_AUTHENTICATED_REMEMBERED'],
+	'/**/images/**':    ['IS_AUTHENTICATED_REMEMBERED'],
+	'/**/favicon.ico':  ['IS_AUTHENTICATED_REMEMBERED'],
      
 ]
 

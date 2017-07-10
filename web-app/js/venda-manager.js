@@ -27,7 +27,6 @@ $(document).ready(function () {
         $('#venda-form-' + counter + ' #funcionario-field select').material_select();
 
         // reset the form
-        $('#venda-form-' + counter + ' #funcionario').val(1);
         $('#venda-form-' + counter + ' #produto').val(1);
         $('#venda-form-' + counter + ' #quantidade').val(0);
     });

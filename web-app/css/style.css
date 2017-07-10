@@ -1,4 +1,52 @@
-div#main-content {
+body {
+    background-color: #fff;
+    background-image:
+            -webkit-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+            -webkit-linear-gradient(#eee .1em, transparent .1em);
+    background-image:
+            -moz-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+            -moz-linear-gradient(#eee .1em, transparent .1em);
+    background-image:
+            -ms-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+            -ms-linear-gradient(#eee .1em, transparent .1em);
+    background-image:
+            -o-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+            -o-linear-gradient(#eee .1em, transparent .1em);
+    background-image:
+            linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+            linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
+input {
+    color: #413c3c;
+    border-bottom: 1px solid #717171 !important;
+}
+
+input + label {
+    color: #717171 !important;
+}
+
+input:focus:not([readonly]) + label {
+    color: #2194d2 !important;
+}
+
+input:focus {
+    border-bottom: 1px solid #2194d2 !important;
+    box-shadow: 0 1px 0 0 #2194d2 !important;
+}
+
+a,
+.mvp-anchor {
+    color: #13587e !important;
+}
+
+a:hover,
+mvp-anchor:hover {
+    color: #2194d2 !important;
+}
+
+#main-content {
     margin-right: 10em;
     margin-left: 10em;
 }

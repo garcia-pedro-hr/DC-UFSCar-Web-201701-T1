@@ -22,6 +22,8 @@
 		<g:layoutHead/>
 	</head>
 	<body>
+        <div id="main-background"></div>
+
         <div id="main-header">
             <nav>
                 <div class="nav-wrapper">
@@ -42,5 +44,6 @@
 
         <div id="main-footer">
         </div>
+
 	</body>
 </html>

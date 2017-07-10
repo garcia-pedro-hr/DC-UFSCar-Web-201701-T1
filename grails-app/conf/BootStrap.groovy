@@ -47,7 +47,6 @@ class BootStrap {
             slsmn.save flush: true
             
             UserRole.create admin, Role.findByAuthority("ROLE_ADMIN"), true
-            UserRole.create admin, Role.findByAuthority("ROLE_SLSMN"), true
             
             UserRole.create slsmn, Role.findByAuthority("ROLE_SLSMN"), true
 
@@ -130,7 +129,7 @@ class BootStrap {
     def destroy = {
     }
 
-    /*
+
     def adicionaProduto(String nome) {       
         def path = 'web-app/files/produtos.json'
         def file = new File(path)
@@ -155,6 +154,6 @@ class BootStrap {
             it.writeLine produtoListJson
         }
     }
-    */
+
 
 }
