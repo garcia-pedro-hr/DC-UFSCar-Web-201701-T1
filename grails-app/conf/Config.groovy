@@ -138,4 +138,3 @@ grails.resources.adhoc.includes = [
     '/images/**', '/css/**', '/js/**', '/img/**', '/fonts/**'
 ]
 
-grails.app.context = "/"

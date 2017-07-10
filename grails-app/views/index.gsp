@@ -12,7 +12,7 @@
 			<div id="controller-list" role="navigation">
 				<div class="row" style="margin-top: 20px;">
 					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<g:if test="${c.logicalPropertyName.equals('login') || c.logicalPropertyName.equals('logout') || c.logicalPropertyName.equals('dbdoc') || c.logicalPropertyName.equals('role')}">
+						<g:if test="${c.logicalPropertyName.equals('login') || c.logicalPropertyName.equals('logout') || c.logicalPropertyName.equals('dbdoc') || c.logicalPropertyName.equals('role')  || c.logicalPropertyName.equals('userRole')}">
 							<!-- Não mostra nada para os controladores de login, logout, dbdoc, role -->
 						</g:if>
 
@@ -41,7 +41,7 @@
 								<div class="col s3">
 									<div class="card hoverable">
 										<div class="card-image waves-effect waves-block waves-light">
-											<g:if test="${c.logicalPropertyName.equals('artista') || c.logicalPropertyName.equals('diretor') || c.logicalPropertyName.equals('autor') || c.logicalPropertyName.equals('user') || c.logicalPropertyName.equals('userRole')}">
+											<g:if test="${c.logicalPropertyName.equals('artista') || c.logicalPropertyName.equals('diretor') || c.logicalPropertyName.equals('autor') || c.logicalPropertyName.equals('user')}">
 												<i class="fa fa-users"></i>
 											</g:if>
 											<g:elseif test="${c.logicalPropertyName.equals('CD') || c.logicalPropertyName.equals('DVD') || c.logicalPropertyName.equals('HQ') || c.logicalPropertyName.equals('livro')}" >

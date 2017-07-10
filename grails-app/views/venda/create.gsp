@@ -24,7 +24,7 @@
 
 			<div id="venda-form-0" class="row">
 				<div class="col s12">
-					<g:form url="[resource:vendaInstance, action:'save']">
+					<g:form url="[resource:vendaInstance, action:'saveEmployee']">
 						<fieldset class="form">
 							<g:render template="form"/>
 						</fieldset>
@@ -51,5 +51,8 @@
 
 		<g:javascript src="init.js" />
 		<g:javascript src="venda-manager.js" />
+		<script>
+			var URL = "${createLink(controller:'venda', action:'saveOne')}"
+		</script>
 	</body>
 </html>
