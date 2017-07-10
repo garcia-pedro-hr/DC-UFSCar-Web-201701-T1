@@ -24,7 +24,7 @@
 											<i class="fa fa-money"></i>
 										</div>
 										<div class="card-content center-align">
-											<span class="card-title activator grey-text text-darken-4"><g:message code="default.home.manage" /> ${c.logicalPropertyName.capitalize()}s</span>
+											<span class="card-title activator grey-text text-darken-4"><g:message code="default.home.manage" /> <g:message code="domain.${c.logicalPropertyName}.label" /></span>
 										</div>
 										<div class="card-action center-align">
 											<a href="${createLink(controller: 'venda', action: 'create')}"><g:message code="default.button.create.label" /></a>
@@ -52,7 +52,7 @@
 											</g:else>
 										</div>
 										<div class="card-content center-align">
-											<span class="card-title activator grey-text text-darken-4"><g:message code="default.home.manage" /> <g:message code="domain.${c.logicalPropertyName}.label" />s</span>
+											<span class="card-title activator grey-text text-darken-4"><g:message code="default.home.manage" /> <g:message code="domain.${c.logicalPropertyName}.label" /></span>
 										</div>
 										<div class="card-action center-align">
 											<a href="${createLink(controller: "${c.logicalPropertyName}", action: 'create')}"><g:message code="default.button.create.label" /></a>
