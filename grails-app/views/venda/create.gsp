@@ -24,7 +24,7 @@
 
 			<div id="venda-form-0" class="row">
 				<div class="col s12">
-					<g:form url="[resource:vendaInstance, action:'saveEmployee']">
+					<g:form url="[resource:vendaInstance, action:'save']">
 						<fieldset class="form">
 							<g:render template="form"/>
 						</fieldset>
