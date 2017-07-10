@@ -49,7 +49,7 @@ $(document).ready(function () {
             // call controller
             $.ajax({
                 type: 'POST',
-                url: '/venda/saveOne',
+                url: URL,
                 async: false,
                 data: {
                     user : user,
@@ -75,6 +75,7 @@ $(document).ready(function () {
                 },
                 error: function (request, status, error) {
                     console.log(error);
+                    console.log(URL);
                 }
             });
         }
