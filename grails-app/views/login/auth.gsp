@@ -26,7 +26,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header center-align">
-                        <p>Lojinha do Salim</p>
+                        <p><g:message code="default.appname.label"/></p>
                     </div>
 
                     <div class="card-content">

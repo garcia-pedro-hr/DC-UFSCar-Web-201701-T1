@@ -10,6 +10,7 @@
 	<body>
 
 		<div id="list-venda" class="content scaffold-list" role="main">
+			<h1><g:message code="domain.venda.label" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -43,7 +44,5 @@
 				<g:paginate total="${vendaInstanceCount ?: 0}" />
 			</div>
 		</div>
-
-		<div
 	</body>
 </html>

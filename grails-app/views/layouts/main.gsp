@@ -29,7 +29,7 @@
         <div id="main-header">
             <nav class="mvp-blue-background">
                 <div class="nav-wrapper">
-                    <a href="${createLink(uri: '/')}" class="brand-logo">Lojinha do Salim</a>
+                    <a href="${createLink(uri: '/')}" class="brand-logo"><g:message code="default.appname.label"/></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><g:link controller="logout">Logout</g:link></li>
                     </ul>
@@ -40,7 +40,7 @@
 
         <div id="main-content">
             <g:layoutBody/>
-            <!-- <img class="materialboxed" width="650" src="http://curitibacult.com.br/wp-content/uploads/2016/01/sebo.jpg"> -->
+
         </div>
 
         <div id="main-footer">
