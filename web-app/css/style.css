@@ -1,5 +1,5 @@
 body {
-    background-color: #fff;
+    background-color: #fff9c4;
     background-image:
             -webkit-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
             -webkit-linear-gradient(#eee .1em, transparent .1em);
@@ -44,6 +44,73 @@ a,
 a:hover,
 mvp-anchor:hover {
     color: #2194d2 !important;
+}
+
+.mvp-blue-background {
+    background-color: #2194d2;
+}
+
+.btn.mvp-blue-background:hover,
+.btn-large.mvp-blue-background:hover,
+.btn-floating.mvp-blue-background:hover {
+    background-color: #13587e !important;
+}
+
+.mvp-blue-text {
+    color: #2194d2;
+}
+
+.card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 120px;
+    width: 100%;
+    padding-top: 20px;
+
+    font-size: 100px;
+}
+
+nav .brand-logo {
+    font-family: Lobster;
+    font-size: 40px;
+    color: white !important;
+    padding-left: 20px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    font-weight: 600;
+    color: #13587e !important;
+}
+
+nav ul li a:hover {
+    color: #fff !important;
+}
+
+nav .brand-logo:hover {
+    color: white;
+}
+
+table {
+    margin-top: 50px;
+    background: #fff;
+    border: 2px white;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+form {
+    background-color: #fff;
+}
+
+.card-image i {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
 #main-content {

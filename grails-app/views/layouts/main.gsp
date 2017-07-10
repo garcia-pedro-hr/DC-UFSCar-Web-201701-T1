@@ -9,11 +9,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title><g:layoutTitle default="Grails"/></title>
+		<title>Lojinha do Salim</title>
 
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 		<g:external dir="css" file="materialize.min.css" />
-        <g:external dir="css" file="style.css"/>
+        <g:external dir="css" file="style.css" />
+        <g:external dir="css" file="font-awesome.min.css" />
 
 		<g:javascript src="util/jquery-3.2.1.min.js" />
 		<g:javascript src="util/jquery.maskedinput.min.js" />
@@ -25,11 +27,10 @@
         <div id="main-background"></div>
 
         <div id="main-header">
-            <nav>
+            <nav class="mvp-blue-background">
                 <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">Lojinha do Salim <3</a>
+                    <a href="${createLink(uri: '/')}" class="brand-logo">Lojinha do Salim</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><g:link controller="login">Login</g:link></li>
                         <li><g:link controller="logout">Logout</g:link></li>
                     </ul>
                 </div>

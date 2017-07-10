@@ -49,7 +49,7 @@ $(document).ready(function () {
             // call controller
             $.ajax({
                 type: 'POST',
-                url: '/temp-t1/venda/saveOne',
+                url: '/venda/saveOne',
                 async: false,
                 data: {
                     user : user,

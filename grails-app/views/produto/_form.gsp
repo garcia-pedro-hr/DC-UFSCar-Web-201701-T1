@@ -13,10 +13,10 @@
 
 <div class="fieldcontain ${hasErrors(bean: produtoInstance, field: 'preco', 'error')} required">
 	<label for="preco">
-		<g:message code="produto.preco.label" default="Preco" />
+		<g:message code="produto.preco.label" default="Preço" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="preco" value="${fieldValue(bean: produtoInstance, field: 'preco')}" required=""/>
+	<g:field name="preco" type="number" value="${fieldValue(bean: produtoInstance, field: 'preco')}" required=""/>
 
 </div>
 

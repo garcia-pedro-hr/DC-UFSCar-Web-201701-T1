@@ -6,14 +6,6 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#create-venda" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
 
 		<div id="create-venda" class="content scaffold-create" role="main">
 			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
@@ -43,14 +35,14 @@
 			<div id="button-row" class="row">
 				<!-- Add form button -->
 				<div class="col s6 center-align">
-					<a id="add-venda" class="btn-floating btn-large waves-effect waves-light red">
+					<a id="add-venda" class="btn-floating btn-large waves-effect waves-light mvp-blue-background">
 						<i class="material-icons">add</i>
 					</a>
 				</div>
 
 				<!-- Send all forms button -->
 				<div class="col s6 center-align">
-					<a id="submit-all" class="btn-floating btn-large waves-effect waves-light red">
+					<a id="submit-all" class="btn-floating btn-large waves-effect waves-light mvp-blue-background">
 						<i class="material-icons">send</i>
 					</a>
 				</div>
