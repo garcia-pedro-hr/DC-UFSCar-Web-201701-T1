@@ -1,7 +1,7 @@
 <%@ page import="br.ufscar.dc.mvp.Venda" %>
 
 
-<sec:ifAnyGranted roles="ROLE_ADMIN">
+<sec:ifAllGranted roles="ROLE_ADMIN">
 	<div id="funcionario-field" class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'funcionario', 'error')} required">
 		<label for="funcionario">
 			<g:message code="venda.funcionario.label" default="Funcionario" />
@@ -10,9 +10,9 @@
 		<g:select id="funcionario" name="funcionario.id" from="${br.ufscar.dc.mvp.User.list()}" optionKey="id" required="" value="${sec.loggedInUserInfo(field: 'id')}" class="many-to-one"/>
 
 	</div>
-</sec:ifAnyGranted>
+</sec:ifAllGranted>
 
-<sec:ifAnyGranted roles="ROLE_SLSMN">
+<sec:ifAllGranted roles="ROLE_SLSMN">
 	<div id="funcionario-field" class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'funcionario', 'error')} required">
 		<label for="funcionario">
 			<g:message code="venda.funcionario.label" default="Funcionario" />
@@ -21,7 +21,7 @@
 		<g:select disabled="disabled" id="funcionario" name="funcionario.id" from="${br.ufscar.dc.mvp.User.list()}" optionKey="id" required="" value="${sec.loggedInUserInfo(field: 'id')}" class="many-to-one"/>
 
 	</div>
-</sec:ifAnyGranted>
+</sec:ifAllGranted>
 
 <div id="produto-field" class="fieldcontain ${hasErrors(bean: vendaInstance, field: 'produto', 'error')} required">
 	<label for="produto">

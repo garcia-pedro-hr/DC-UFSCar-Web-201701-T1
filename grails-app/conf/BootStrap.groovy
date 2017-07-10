@@ -27,12 +27,12 @@ class BootStrap {
 
         if (!User.list()) {
             def admin = new User (
-                    username: "admin",
-                    password: "root",
-                    email: "admin@mvp.br",
-                    firstName: "Administrador",
-                    lastName: " MVP",
-                    enabled: true
+                username: "admin",
+                password: "root",
+                email: "admin@mvp.br",
+                firstName: "Administrador",
+                lastName: " MVP",
+                enabled: true
             )
             admin.save flush: true
             

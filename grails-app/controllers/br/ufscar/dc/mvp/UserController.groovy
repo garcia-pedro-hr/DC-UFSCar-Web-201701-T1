@@ -48,6 +48,34 @@ class UserController {
         }
     }
 
+    @Transactional
+    def saveEmployee(User userInstance) {
+        if (userInstance == null) {
+            notFound()
+            return
+        }
+
+        if (userInstance.hasErrors()) {
+            respond userInstance.errors, view:'create'
+            return
+        }
+
+        userInstance.save flush:true
+
+        new UserRole (
+                user: User.findByUsername(userInstance.username),
+                role: Role.findByAuthority('ROLE_SLSMN')
+        ).save flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
+                redirect userInstance
+            }
+            '*' { respond userInstance, [status: CREATED] }
+        }
+    }
+
     def edit(User userInstance) {
         respond userInstance
     }
